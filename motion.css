@@ -1,0 +1,44 @@
+/* Subtle motion system: keeps the established palette and lets users opt out. */
+:root { --motion-ease: cubic-bezier(.2,.75,.25,1); }
+html { scroll-behavior: smooth; }
+button, a, .panel, .global-search, .global-result, .place-result, .trip-row, .tour-card, .story-card, .place-photo {
+  transition: transform 220ms var(--motion-ease), box-shadow 220ms var(--motion-ease), border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+button:not(:disabled):active { transform: translateY(1px) scale(.985); }
+.btn-primary, .auth-submit { box-shadow: 0 5px 14px #3f6c5020; }
+.btn-primary:hover, .auth-submit:hover { box-shadow: 0 9px 22px #3f6c5033; transform: translateY(-2px); }
+.panel:hover, .story-card:hover { box-shadow: 0 12px 30px #263b2010; }
+.global-search:focus-within { transform: translateY(-1px); box-shadow: 0 0 0 4px #4c765312, 0 8px 20px #263b200b; }
+.global-search-results:not([hidden]) { transform-origin: top center; animation: search-panel-in 180ms var(--motion-ease) both; }
+.global-result { animation: result-in 220ms var(--motion-ease) both; }
+.global-result:nth-child(2) { animation-delay: 20ms; }
+.global-result:nth-child(3) { animation-delay: 40ms; }
+.global-result:nth-child(4) { animation-delay: 60ms; }
+.global-result:hover, .place-result:hover { transform: translateX(3px); }
+.page-heading { animation: heading-in 420ms var(--motion-ease) both; }
+.hero-card, .trips-hero, .place-hero { animation: hero-in 650ms var(--motion-ease) both; }
+.hero-art, .feed-ai-card { background-position: center; }
+.hero-art { animation: art-in 900ms var(--motion-ease) both; }
+.feed-story-image, .place-photo img, .upcoming-image { transition: transform 550ms var(--motion-ease), filter 350ms ease; }
+.feed-story:hover .feed-story-image, .place-photo:hover img { transform: scale(1.025); filter: saturate(1.06); }
+.place-photo { overflow: hidden; }
+.view.is-changing { animation: view-in 300ms var(--motion-ease) both; }
+.motion-item { opacity: 0; transform: translateY(14px); }
+.motion-item.motion-visible { animation: reveal-in 520ms var(--motion-ease) both; animation-delay: var(--motion-delay, 0ms); }
+.auth-card { animation: auth-in 550ms var(--motion-ease) both; }
+.auth-art { background-position: center 58%; animation: auth-art-in 850ms var(--motion-ease) both; }
+.auth-art::after { animation: overlay-in 900ms ease both; }
+@keyframes search-panel-in { from { opacity: 0; transform: translateY(-7px) scale(.99); } to { opacity: 1; transform: none; } }
+@keyframes result-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@keyframes heading-in { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+@keyframes hero-in { from { opacity: 0; transform: translateY(12px) scale(.995); } to { opacity: 1; transform: none; } }
+@keyframes art-in { from { opacity: .7; background-position: center 54%; } to { opacity: 1; background-position: center; } }
+@keyframes view-in { from { opacity: .55; } to { opacity: 1; } }
+@keyframes reveal-in { to { opacity: 1; transform: none; } }
+@keyframes auth-in { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+@keyframes auth-art-in { from { background-position: center 65%; } to { background-position: center 58%; } }
+@keyframes overlay-in { from { opacity: .65; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .motion-item { opacity: 1; transform: none; }
+}

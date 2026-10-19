@@ -1,0 +1,33 @@
+# Secrets / local data
+server-data.json
+server-data.json.tmp
+auth-users.json
+auth-users.json.tmp
+config.php
+.env
+.env.*
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build / generated files
+dist/
+build/
+out/
+
+# Ralph Loop extension
+ralph-loop-antigravity/node_modules/
+ralph-loop-antigravity/out/
+ralph-loop-antigravity/*.vsix
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local Ralph Loop extension
+ralph-loop-antigravity/

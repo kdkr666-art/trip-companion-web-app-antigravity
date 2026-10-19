@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#faf9f5"><title>Sign in · Trip Companion</title>
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="auth-art">
+      <a class="auth-brand" href="/login.html"><span class="brand-mark">tc</span><span>trip companion<small>TOUR TOGETHER</small></span></a>
+      <div class="art-copy"><span class="eyebrow">PLAN · CONNECT · REMEMBER</span><h1>The best trips<br>are shared.</h1><p>Bring the group together, make a plan, and keep every shared expense clear.</p></div>
+      <div class="landscape"><span class="sun"></span><span class="ridge ridge-back"></span><span class="ridge ridge-front"></span><span class="pin">•</span></div>
+      <div class="art-caption">One place for the plans, the people, and the memories.</div>
+    </section>
+    <section class="auth-side">
+      <div class="auth-card">
+        <div class="eyebrow" id="formEyebrow">WELCOME BACK</div><h2 id="formTitle">Sign in to your account</h2><p class="auth-intro" id="formIntro">Pick up where your travel plans left off.</p>
+        <div class="auth-tabs" id="authTabs"><button class="auth-tab active" type="button" data-mode="login">Sign in</button><button class="auth-tab" type="button" data-mode="signup">Create account</button></div>
+        <form id="loginForm" class="auth-form">
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required placeholder="Your password"><button type="button" class="auth-link forgot-link hidden" id="forgotLink">Forgot password?</button></label>
+          <div class="auth-error" id="loginError" role="alert"></div>
+          <button class="auth-submit" type="submit">Sign in <span>→</span></button>
+        </form>
+        <form id="signupForm" class="auth-form hidden">
+          <label>Your name<input name="name" type="text" autocomplete="name" minlength="2" maxlength="70" required placeholder="How should we call you?"></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></label>
+          <label>Password<input name="password" type="password" autocomplete="new-password" minlength="10" required placeholder="At least 10 characters"></label>
+          <div class="auth-error" id="signupError" role="alert"></div>
+          <button class="auth-submit" type="submit">Create my account <span>→</span></button>
+        </form>
+        <form id="forgotForm" class="auth-form hidden">
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <div class="auth-error" id="forgotError" role="alert"></div>
+          <div class="reset-result hidden" id="resetResult" role="status"></div>
+          <button class="auth-submit" type="submit">Create reset link <span>→</span></button>
+          <button class="auth-link back-to-login" type="button" id="backToLogin">← Back to sign in</button>
+        </form>
+        <div class="divider"><span>OR</span></div>
+        <button type="button" class="demo-button" id="demoButton"><span class="demo-icon">✳</span><span><b>Try the demo</b><small>Explore with sample trips and accounts</small></span><span class="demo-arrow">→</span></button>
+        <p class="local-note"><i></i> Local preview · Accounts stay on this computer</p>
+      </div>
+      <footer>Trip Companion <span>·</span> Tour together, settle fairly.</footer>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>

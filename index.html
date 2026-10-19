@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f5"><meta name="description" content="Plan a trip together and keep shared expenses clear.">
+  <title>Trip Companion — Tour together</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="onboarding.css">
+  <link rel="stylesheet" href="place-explorer.css">
+  <link rel="stylesheet" href="premium.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Trip Companion home"><span class="brand-mark">tc</span><span>trip companion<small>TOUR TOGETHER</small></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-page="home"><span class="nav-icon">⌂</span>Home</a>
+        <a href="#tours" data-page="tours"><span class="nav-icon">♧</span>Groups & travelers</a>
+        <a href="#places" data-page="places"><span class="nav-icon">⌖</span>Explore location</a>
+        <a href="#book" data-page="book"><span class="nav-icon">✈</span>Plan a trip</a>
+        <a href="#stories" data-page="stories"><span class="nav-icon">✧</span>Travel stories</a>
+        <a href="#trips" data-page="trips"><span class="nav-icon">▣</span>My trips</a>
+        <a href="#saved" data-page="saved"><span class="nav-icon">♧</span>Saved stories</a>
+        <a href="#expenses" data-page="expenses"><span class="nav-icon">↗</span>Expenses <span class="nav-count" id="navExpenseCount">0</span></a>
+        <a href="#activity" data-page="activity"><span class="nav-icon">✧</span>Activity & memories</a>
+        <a href="#profile" data-page="profile"><span class="nav-icon">◉</span>My profile</a>
+      </nav>
+      <div class="sidebar-label admin-label">MANAGEMENT</div>
+      <nav class="main-nav"><a href="#admin" data-page="admin"><span class="nav-icon">⚙</span>Admin console <span class="admin-chip">ADMIN</span></a></nav>
+      <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✳</div><b>Travel better, together</b><p>Shared plans and expenses, all in one place.</p><a href="#help" id="helpLink">How it works <span>↗</span></a></div><button class="user-mini" id="userMenu"><span class="avatar avatar-s">AR</span><span class="user-mini-text"><b id="sidebarName">Aarav Rao</b><small id="sidebarEmail">aarav@example.test</small></span><span class="dots">···</span></button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button><div class="crumb"><b id="pageCrumb">Overview</b></div><div class="global-search-wrap"><label class="global-search"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="Search trips, places, stories, travelers…" autocomplete="off" aria-label="Search trips, places, stories, and travelers"><kbd>Enter</kbd></label><div id="globalSearchResults" class="global-search-results" role="listbox" hidden></div></div><div class="top-actions"><span class="demo-pill"><i></i> DEMO WORKSPACE</span><button class="btn btn-sm invite-top" data-action="join-code">＋ Invite code</button><button class="icon-button" id="notificationButton" aria-label="Notifications">♧<i class="notification-dot"></i></button><button class="top-profile" id="topProfile"><span class="avatar avatar-s">AR</span><span id="topName">Aarav</span><span class="chevron">⌄</span></button></div></header>
+      <div id="view" class="view" tabindex="-1"></div>
+      <footer class="footer"><span>Trip Companion <b>·</b> Tour together, settle fairly.</span><span>Demo workspace · Your changes stay in this browser</span></footer>
+    </main>
+  </div>
+  <div id="modalRoot"></div><div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="search-utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
